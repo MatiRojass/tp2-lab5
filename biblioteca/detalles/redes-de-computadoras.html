@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../resources/css/output.css" />
+		<title>Redes de Computadoras - Biblioteca</title>
+	</head>
+	<body class="scroll-smooth">
+		<header class="bg-zinc-50 text-[#5d4037] font-serif">
+			<div class="max-w-3xl p-3 flex justify-between mx-auto flex-wrap">
+				<div>
+					<h1 class="animate-entrada text-3xl font-bold italic">Biblioteca</h1>
+				</div>
+				<nav class="flex flex-row gap-4 align-middle justify-center">
+					<a href="../index.html" class="block content-center hover:underline">Inicio</a>
+					<a href="../libros.html" class="block content-center hover:underline">Libros</a>
+					<a href="../clientes.html" class="block content-center hover:underline">Clientes</a>
+				</nav>
+			</div>
+		</header>
+		<div class="bg-zinc-200 p-3">
+			<div class="mx-auto max-w-3xl">
+				<a href="#sugerencias" class="hover:brightness-110 block w-fit px-10 py-2 text-white bg-[#626f47]">TENGO UNA SUGERENCIA</a>
+			</div>
+		</div>
+		<main class="mt-5 p-3 max-w-3xl mx-auto bg-zinc-50">
+			<article>
+				<div class="flex flex-col md:flex-row gap-6">
+					<div class="md:w-1/2">
+						<img src="../resources/images/redes-de-computadoras.webp" alt="Redes de Computadoras" class="w-full h-auto shadow-lg" />
+					</div>
+					<div class="md:w-1/2 flex flex-col justify-center">
+						<h2 class="text-3xl font-bold mb-4 font-serif text-[#141223]">Redes de Computadoras: Un Enfoque Descendente</h2>
+						<p class="text-2xl font-bold text-[#626f47] mb-4">$50.00</p>
+						<button class="bg-[#5d4037] text-white px-6 py-2 rounded hover:bg-[#c8a482] transition-colors w-fit">Añadir al carrito</button>
+					</div>
+				</div>
+				<div class="text-gray-600 mt-10">
+                    <h3 class="text-black text-lg">Descripción</h3>
+                    <p class="mt-5">
+                        Este libro adopta un enfoque descendente único para el aprendizaje de redes, comenzando por la capa de aplicación y descendiendo hacia las capas físicas.
+                    </p>
+                    <p class="mt-5">
+                        Es ideal para entender cómo funciona Internet y las redes modernas, con ejemplos prácticos y una estructura que facilita el aprendizaje incremental.
+                    </p>
+                    <p class="mt-5">
+                        SOBRE LOS AUTORES: James Kurose y Keith Ross son expertos en el campo de las redes de computadoras, con décadas de experiencia en investigación y enseñanza universitaria.
+                    </p>
+                    <p class="mt-5">DETALLES DE EDICIÓN
+                        - Editorial: Pearson
+                        - Páginas: 800
+                        - Idioma: Español
+                        - Encuadernación: Tapa blanda
+                        - ISBN: 978-0133594140
+                        - Año de publicación: 2017
+                    </p>
+                </div>
+			</article>
+		</main>
+		<footer class="bg-[#5d4037] text-white py-8">
+			<div class="max-w-3xl mx-auto p-3">
+				<form action="" id="sugerencias" class="flex flex-col gap-4 max-w-md mx-auto bg-[#4e362f] p-6 rounded-lg shadow-inner">
+					<h3 class="text-2xl font-serif border-b border-[#6d4c41] pb-2">Mandá tu sugerencia</h3>
+					<div class="flex flex-col gap-1">
+						<label for="nombre" class="text-sm text-zinc-300">Nombre</label>
+						<input type="text" id="nombre" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="Tu nombre" />
+					</div>
+					<div class="flex flex-col gap-1">
+						<label for="correo" class="text-sm text-zinc-300">Correo</label>
+						<input type="email" id="correo" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="ejemplo@correo.com" />
+					</div>
+					<div class="flex flex-col gap-1">
+						<label for="msj" class="text-sm text-zinc-300">Sugerencia</label>
+						<textarea id="msj" rows="3" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all resize-none" placeholder="¿En qué podemos mejorar?"></textarea>
+					</div>
+					<button type="submit" class="bg-[#c8a482] hover:bg-[#b89371] text-white font-bold py-2 mt-2 transition-colors rounded-sm uppercase text-sm tracking-wider">Enviar Mensaje</button>
+				</form>
+				<div class="border-t border-[#6d4c41] mt-10 mb-6"></div>
+				<div class="flex flex-col gap-5 md:flex-row md:justify-between items-center">
+					<h2 class="font-serif text-2xl italic">Biblioteca</h2>
+					<nav class="flex flex-row gap-4 text-sm text-zinc-300">
+						<a href="" class="hover:text-white hover:underline transition-colors">Términos</a>
+						<a href="" class="hover:text-white hover:underline transition-colors">Contacto</a>
+						<a href="" class="hover:text-white hover:underline transition-colors">Sobre Nosotros</a>
+					</nav>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
