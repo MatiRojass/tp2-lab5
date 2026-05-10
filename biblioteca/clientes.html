@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <script src="./scripts/validacion.js" defer></script> -->
 		<link rel="stylesheet" href="./resources/css/output.css" />
+		<link rel="stylesheet" href="./resources/css/tarjeta-contacto.css" />
+        <script src="./scripts/contactos.js" defer></script>
 		<title>Biblioteca - Clientes</title>
 	</head>
 	<body class="scroll-smooth">
@@ -25,66 +28,111 @@
 			</div>
 		</div>
 		<main class="mt-5 p-3 max-w-3xl mx-auto bg-zinc-50 min-h-[50vh]">
+            <section>
+                <h3>Agregar contacto</h3>
+                <form action="" id="formulario-agregar">
+                    <input class="campo" type="text" name="nombre" id="inpNombre" placeholder="Nombre" required>
+                    <input class="campo" type="email" name="correo" id="inpCorreo" placeholder="ejemplo@mail.com" required>
+                    <button id="boton-agregar">Agregar</button>
+                </form>
+            </section>
 			<section class="mt-6">
 				<h2 class="text-2xl font-serif text-[#141223] mb-6 border-b pb-2">Nuestros Clientes</h2>
-				<ul class="flex flex-col gap-6">
-					<li class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
+				<ul class="flex flex-col gap-6" id="lista-contactos">
+					<li class="item-contacto flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
 						<img src="./resources/images/usuario.webp" alt="Avatar Usuario" class="size-16 rounded-full object-cover bg-zinc-200" />
 						<div class="flex flex-col">
 							<span class="text-lg font-bold text-[#5d4037]">Juan Pérez</span>
 							<span class="text-sm text-gray-600">juan.perez@email.com</span>
 						</div>
+                        <button class="boton-eliminar">X</button>
 					</li>
-					<li class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
+					<li class="item-contacto flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
 						<img src="./resources/images/usuario.webp" alt="Avatar Usuario" class="size-16 rounded-full object-cover bg-zinc-200" />
 						<div class="flex flex-col">
 							<span class="text-lg font-bold text-[#5d4037]">María García</span>
 							<span class="text-sm text-gray-600">maria.garcia@email.com</span>
 						</div>
+                         <button class="boton-eliminar">X</button>
 					</li>
-					<li class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
+					<li class="item-contacto flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
 						<img src="./resources/images/usuario.webp" alt="Avatar Usuario" class="size-16 rounded-full object-cover bg-zinc-200" />
 						<div class="flex flex-col">
 							<span class="text-lg font-bold text-[#5d4037]">Lionel Messi</span>
 							<span class="text-sm text-gray-600">lapulga@email.com</span>
 						</div>
+                         <button class="boton-eliminar">X</button>
 					</li>
-					<li class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
+					<li class="item-contacto flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-zinc-100">
 						<img src="./resources/images/usuario.webp" alt="Avatar Usuario" class="size-16 rounded-full object-cover bg-zinc-200" />
 						<div class="flex flex-col">
 							<span class="text-lg font-bold text-[#5d4037]">Ana Martínez</span>
 							<span class="text-sm text-gray-600">ana.martinez@email.com</span>
 						</div>
+                         <button class="boton-eliminar">X</button>
 					</li>
 				</ul>
 			</section>
 		</main>
 		<footer class="bg-[#5d4037] text-white py-8">
 			<div class="max-w-3xl mx-auto p-3">
-				<form action="" id="sugerencias" class="flex flex-col gap-4 max-w-md mx-auto bg-[#4e362f] p-6 rounded-lg shadow-inner">
+				<form action="" method="post" id="sugerencias" class="flex flex-col gap-4 max-w-md mx-auto bg-[#4e362f] p-6 rounded-lg shadow-inner">
 					<h3 class="text-2xl font-serif border-b border-[#6d4c41] pb-2">Mandá tu sugerencia</h3>
 
 					<div class="flex flex-col gap-1">
 						<label for="nombre" class="text-sm text-zinc-300">Nombre</label>
-						<input type="text" required id="nombre" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="Tu nombre" />
+						<input
+							type="text"
+							id="nombre"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="Tu nombre"
+							pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$"
+							title="Solo caracteres alfabéticos"
+							required
+						/>
+					</div>
+
+					<div class="flex flex-col gap-1">
+						<label for="dni" class="text-sm text-zinc-300">DNI</label>
+						<input
+							type="text"
+							id="dni"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="12345678"
+							pattern="^[1-9][0-9]{7}$"
+							title="DNI valido"
+							required
+						/>
 					</div>
 
 					<div class="flex flex-col gap-1">
 						<label for="correo" class="text-sm text-zinc-300">Correo</label>
-						<input type="email" required id="correo" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="ejemplo@correo.com" />
+						<input
+							type="email"
+							id="correo"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="ejemplo@correo.com"
+							required
+						/>
+					</div>
+
+					<div class="flex flex-col gap-1">
+						<label for="fecha" class="text-sm text-zinc-300">Fecha</label>
+						<input type="date" id="fecha" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="DD/MM/YYYY" required />
 					</div>
 
 					<div class="flex flex-col gap-1">
 						<label for="msj" class="text-sm text-zinc-300">Sugerencia</label>
 						<textarea
-                            required
 							id="msj"
+							rows="3"
 							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all resize-none"
 							placeholder="¿En qué podemos mejorar?"
+							required
 						></textarea>
 					</div>
 
-					<button type="submit" class="bg-[#c8a482] hover:bg-[#b89371] text-white font-bold py-2 mt-2 transition-colors rounded-sm uppercase text-sm tracking-wider">Enviar Mensaje</button>
+					<button id="enviar" type="submit" class="bg-[#c8a482] hover:bg-[#b89371] text-white font-bold py-2 mt-2 transition-colors rounded-sm uppercase text-sm tracking-wider">Enviar Mensaje</button>
 				</form>
 
 				<div class="border-t border-[#6d4c41] mt-10 mb-6"></div>

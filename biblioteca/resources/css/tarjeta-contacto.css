@@ -1,0 +1,37 @@
+.item-contacto{
+    position: relative;
+}
+
+.boton-eliminar{
+    color: white;
+    background-color: red;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.boton-eliminar:hover{
+    opacity: 60%;
+}
+
+.campo{
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#boton-agregar{
+    color: white;
+    background-color: #626F47;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#boton-agregar:hover{
+    opacity: 60%;
+}

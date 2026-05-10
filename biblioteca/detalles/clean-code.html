@@ -4,8 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../resources/css/output.css" />
+		<link rel="stylesheet" href="../resources/css/descripcion.css" />
+		<script src="../scripts/descripcion.js" defer></script>
+		<!-- <script src="./scripts/validacion.js" defer></script> -->
 		<title>Biblioteca</title>
 	</head>
+
 	<body class="scroll-smooth">
 		<header class="bg-zinc-50 text-[#5d4037] font-serif">
 			<div class="max-w-3xl p-3 flex justify-between mx-auto flex-wrap">
@@ -37,47 +41,74 @@
 					</div>
 				</div>
 				<div class="text-gray-600 mt-10">
-                    <h3 class="text-black text-lg">Descripción</h3>
-                    <p class="mt-5">
-                        ¿Te gustaría escribir código que sea claro, flexible y fácil de mantener? Descubrí cómo transformar tu forma de programar y llevá tus habilidades al siguiente nivel con uno de los libros más
-                        influyentes del desarrollo de software.
-                    </p>
-                    <p class="mt-5">
-                        SOBRE EL LIBRO Clean Code: A Handbook of Agile Software Craftsmanship, en su segunda edición, es la guía esencial para quienes buscan perfeccionar el arte de la programación. Escrito por el
-                        reconocido Robert C. Martin, este bestseller mundial vuelve renovado con ejemplos actualizados, mayor cobertura de pruebas, principios de diseño y arquitectura, y consejos prácticos
-                        aplicables a múltiples lenguajes de programación. El libro está organizado en cuatro partes clave: prácticas básicas de codificación, principios y heurísticas de diseño, arquitectura de alto
-                        nivel y ética profesional. Cada capítulo desafía al lector a analizar la calidad del código y repensar sus valores como desarrollador, guiándolo hacia la creación de software más robusto y
-                        sostenible. Clean Code es ideal tanto para quienes inician en la programación como para profesionales experimentados que desean mejorar sus proyectos y equipos. Su enfoque práctico y
-                        profundo lo ha convertido en una referencia obligada para la comunidad de software a nivel global.
-                    </p>
-                    <p class="mt-5">
-                        SOBRE EL AUTOR Robert C. Martin es un autor reconocido internacionalmente por su aporte a la ingeniería de software. Su obra Clean Code es considerada un clásico moderno y una lectura
-                        imprescindible para programadores y equipos ágiles que buscan la excelencia en el desarrollo de software.
-                    </p>
-                    <p class="mt-5">DETALLES DE EDICIÓN
-                        - Editorial: PEARSON EDUCATION 
-                        - Páginas: 672 
-                        - Idioma: English 
-                        - Encuadernación: Paperback 
-                        - ISBN: 9780135398579
-                        - Año de publicación: 2025
-                    </p>
-                </div>
+					<h3 class="text-black text-lg">Descripción</h3>
+					<p class="mt-5">
+						¿Te gustaría escribir código que sea claro, flexible y fácil de mantener? Descubrí cómo transformar tu forma de programar y llevá tus habilidades al siguiente nivel con uno de los libros
+						más influyentes del desarrollo de software.
+					</p>
+					<p class="mt-5 hidden">
+						SOBRE EL LIBRO Clean Code: A Handbook of Agile Software Craftsmanship, en su segunda edición, es la guía esencial para quienes buscan perfeccionar el arte de la programación. Escrito por
+						el reconocido Robert C. Martin, este bestseller mundial vuelve renovado con ejemplos actualizados, mayor cobertura de pruebas, principios de diseño y arquitectura, y consejos prácticos
+						aplicables a múltiples lenguajes de programación. El libro está organizado en cuatro partes clave: prácticas básicas de codificación, principios y heurísticas de diseño, arquitectura de
+						alto nivel y ética profesional. Cada capítulo desafía al lector a analizar la calidad del código y repensar sus valores como desarrollador, guiándolo hacia la creación de software más
+						robusto y sostenible. Clean Code es ideal tanto para quienes inician en la programación como para profesionales experimentados que desean mejorar sus proyectos y equipos. Su enfoque
+						práctico y profundo lo ha convertido en una referencia obligada para la comunidad de software a nivel global.
+					</p>
+					<p class="mt-5 hidden">
+						SOBRE EL AUTOR Robert C. Martin es un autor reconocido internacionalmente por su aporte a la ingeniería de software. Su obra Clean Code es considerada un clásico moderno y una lectura
+						imprescindible para programadores y equipos ágiles que buscan la excelencia en el desarrollo de software.
+					</p>
+					<p class="mt-5 hidden">DETALLES DE EDICIÓN - Editorial: PEARSON EDUCATION - Páginas: 672 - Idioma: English - Encuadernación: Paperback - ISBN: 9780135398579 - Año de publicación: 2025</p>
+					<span id="ver-mas">ver mas...</span>
+					<span id="ver-menos" class="hidden">ver menos</span>
+				</div>
 			</article>
 		</main>
 		<footer class="bg-[#5d4037] text-white py-8">
 			<div class="max-w-3xl mx-auto p-3">
-				<form action="" id="sugerencias" class="flex flex-col gap-4 max-w-md mx-auto bg-[#4e362f] p-6 rounded-lg shadow-inner">
+				<form action="" method="post" id="sugerencias" class="flex flex-col gap-4 max-w-md mx-auto bg-[#4e362f] p-6 rounded-lg shadow-inner">
 					<h3 class="text-2xl font-serif border-b border-[#6d4c41] pb-2">Mandá tu sugerencia</h3>
 
 					<div class="flex flex-col gap-1">
 						<label for="nombre" class="text-sm text-zinc-300">Nombre</label>
-						<input type="text" id="nombre" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="Tu nombre" />
+						<input
+							type="text"
+							id="nombre"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="Tu nombre"
+							pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$"
+							title="Solo caracteres alfabéticos"
+							required
+						/>
+					</div>
+
+					<div class="flex flex-col gap-1">
+						<label for="dni" class="text-sm text-zinc-300">DNI</label>
+						<input
+							type="text"
+							id="dni"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="12345678"
+							pattern="^[1-9][0-9]{7}$"
+							title="DNI valido"
+							required
+						/>
 					</div>
 
 					<div class="flex flex-col gap-1">
 						<label for="correo" class="text-sm text-zinc-300">Correo</label>
-						<input type="email" id="correo" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="ejemplo@correo.com" />
+						<input
+							type="email"
+							id="correo"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="ejemplo@correo.com"
+							required
+						/>
+					</div>
+
+					<div class="flex flex-col gap-1">
+						<label for="fecha" class="text-sm text-zinc-300">Fecha</label>
+						<input type="date" id="fecha" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="DD/MM/YYYY" required />
 					</div>
 
 					<div class="flex flex-col gap-1">
@@ -87,10 +118,11 @@
 							rows="3"
 							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all resize-none"
 							placeholder="¿En qué podemos mejorar?"
+							required
 						></textarea>
 					</div>
 
-					<button type="submit" class="bg-[#c8a482] hover:bg-[#b89371] text-white font-bold py-2 mt-2 transition-colors rounded-sm uppercase text-sm tracking-wider">Enviar Mensaje</button>
+					<button id="enviar" type="submit" class="bg-[#c8a482] hover:bg-[#b89371] text-white font-bold py-2 mt-2 transition-colors rounded-sm uppercase text-sm tracking-wider">Enviar Mensaje</button>
 				</form>
 
 				<div class="border-t border-[#6d4c41] mt-10 mb-6"></div>
@@ -107,4 +139,3 @@
 		</footer>
 	</body>
 </html>
-

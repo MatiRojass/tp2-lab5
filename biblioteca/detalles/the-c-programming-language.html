@@ -4,6 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../resources/css/output.css" />
+		<link rel="stylesheet" href="../resources/css/descripcion.css" />
+		<script src="../scripts/descripcion.js" defer></script>
+		<!-- <script src="./scripts/validacion.js" defer></script> -->
 		<title>The C Programming Language - Biblioteca</title>
 	</head>
 	<body class="scroll-smooth">
@@ -37,44 +40,83 @@
 					</div>
 				</div>
 				<div class="text-gray-600 mt-10">
-                    <h3 class="text-black text-lg">Descripción</h3>
-                    <p class="mt-5">
-                        Escrito por los creadores del lenguaje, este libro es la guía definitiva para aprender C. Es una lectura esencial para cualquier programador que quiera entender las bases de la computación moderna.
-                    </p>
-                    <p class="mt-5">
-                        El libro presenta una introducción clara al lenguaje C, cubriendo desde los conceptos básicos hasta el manejo avanzado de punteros y estructuras de datos. Es conocido por su brevedad y claridad, convirtiéndose en un estándar de la industria.
-                    </p>
-                    <p class="mt-5">
-                        SOBRE LOS AUTORES: Brian Kernighan y Dennis Ritchie fueron figuras clave en el desarrollo de UNIX y del lenguaje C en los Laboratorios Bell. Ritchie es el creador original del lenguaje.
-                    </p>
-                    <p class="mt-5">DETALLES DE EDICIÓN
-                        - Editorial: Prentice Hall
-                        - Páginas: 272
-                        - Idioma: English
-                        - Encuadernación: Paperback
-                        - ISBN: 978-0131103627
-                        - Año de publicación: 1988
-                    </p>
-                </div>
+					<h3 class="text-black text-lg">Descripción</h3>
+					<p class="mt-5">
+						Escrito por los creadores del lenguaje, este libro es la guía definitiva para aprender C. Es una lectura esencial para cualquier programador que quiera entender las bases de la computación
+						moderna.
+					</p>
+					<p class="mt-5 hidden">
+						El libro presenta una introducción clara al lenguaje C, cubriendo desde los conceptos básicos hasta el manejo avanzado de punteros y estructuras de datos. Es conocido por su brevedad y
+						claridad, convirtiéndose en un estándar de la industria.
+					</p>
+					<p class="mt-5 hidden">
+						SOBRE LOS AUTORES: Brian Kernighan y Dennis Ritchie fueron figuras clave en el desarrollo de UNIX y del lenguaje C en los Laboratorios Bell. Ritchie es el creador original del lenguaje.
+					</p>
+					<p class="mt-5 hidden">DETALLES DE EDICIÓN - Editorial: Prentice Hall - Páginas: 272 - Idioma: English - Encuadernación: Paperback - ISBN: 978-0131103627 - Año de publicación: 1988</p>
+					<span id="ver-mas">ver mas...</span>
+					<span id="ver-menos" class="hidden">ver menos</span>
+				</div>
 			</article>
 		</main>
 		<footer class="bg-[#5d4037] text-white py-8">
 			<div class="max-w-3xl mx-auto p-3">
-				<form action="" id="sugerencias" class="flex flex-col gap-4 max-w-md mx-auto bg-[#4e362f] p-6 rounded-lg shadow-inner">
+				<form action="" method="post" id="sugerencias" class="flex flex-col gap-4 max-w-md mx-auto bg-[#4e362f] p-6 rounded-lg shadow-inner">
 					<h3 class="text-2xl font-serif border-b border-[#6d4c41] pb-2">Mandá tu sugerencia</h3>
+
 					<div class="flex flex-col gap-1">
 						<label for="nombre" class="text-sm text-zinc-300">Nombre</label>
-						<input type="text" id="nombre" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="Tu nombre" />
+						<input
+							type="text"
+							id="nombre"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="Tu nombre"
+							pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$"
+							title="Solo caracteres alfabéticos"
+							required
+						/>
 					</div>
+
+					<div class="flex flex-col gap-1">
+						<label for="dni" class="text-sm text-zinc-300">DNI</label>
+						<input
+							type="text"
+							id="dni"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="12345678"
+							pattern="^[1-9][0-9]{7}$"
+							title="DNI valido"
+							required
+						/>
+					</div>
+
 					<div class="flex flex-col gap-1">
 						<label for="correo" class="text-sm text-zinc-300">Correo</label>
-						<input type="email" id="correo" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="ejemplo@correo.com" />
+						<input
+							type="email"
+							id="correo"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all"
+							placeholder="ejemplo@correo.com"
+							required
+						/>
 					</div>
+
+					<div class="flex flex-col gap-1">
+						<label for="fecha" class="text-sm text-zinc-300">Fecha</label>
+						<input type="date" id="fecha" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all" placeholder="DD/MM/YYYY" required />
+					</div>
+
 					<div class="flex flex-col gap-1">
 						<label for="msj" class="text-sm text-zinc-300">Sugerencia</label>
-						<textarea id="msj" rows="3" class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all resize-none" placeholder="¿En qué podemos mejorar?"></textarea>
+						<textarea
+							id="msj"
+							rows="3"
+							class="bg-zinc-50 text-black px-3 py-2 rounded-sm focus:ring-2 focus:ring-[#c8a482] outline-none transition-all resize-none"
+							placeholder="¿En qué podemos mejorar?"
+							required
+						></textarea>
 					</div>
-					<button type="submit" class="bg-[#c8a482] hover:bg-[#b89371] text-white font-bold py-2 mt-2 transition-colors rounded-sm uppercase text-sm tracking-wider">Enviar Mensaje</button>
+
+					<button id="enviar" type="submit" class="bg-[#c8a482] hover:bg-[#b89371] text-white font-bold py-2 mt-2 transition-colors rounded-sm uppercase text-sm tracking-wider">Enviar Mensaje</button>
 				</form>
 				<div class="border-t border-[#6d4c41] mt-10 mb-6"></div>
 				<div class="flex flex-col gap-5 md:flex-row md:justify-between items-center">
@@ -89,4 +131,3 @@
 		</footer>
 	</body>
 </html>
-

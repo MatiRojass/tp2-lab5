@@ -1,0 +1,15 @@
+.hidden{
+    display: none;
+}
+
+
+
+
+#ver-mas, #ver-menos{
+    color: blue;
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
